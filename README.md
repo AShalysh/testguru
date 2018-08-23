@@ -5,6 +5,8 @@ application up and running.
 
 Things you may want to cover:
 
+* The list of objects for the Testguru project: test, administrator and tester.
+
 * Ruby version
 
 * System dependencies
