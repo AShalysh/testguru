@@ -1,5 +1,5 @@
 class ChangeAnswersCorrectDefault < ActiveRecord::Migration[5.2]
   def change
-  	change_column_default(:answers, :correct, false)
+    change_column_default(:answers, :correct, false)
   end
 end
