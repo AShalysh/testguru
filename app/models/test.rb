@@ -6,14 +6,19 @@ class Test < ApplicationRecord
   has_many :users, through: :test_users
 
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :title, uniqueness: { scope: :level }
 
-  scope :easy_tests, -> { where(level: 0..1) }
-  scope :average_tests, -> { where(level: 2..4) }
-  scope :hard_tests, -> { where(level: 5..Float::INFINITY) }
+  scope :easy_level, -> { where(level: 0..1) }
+  scope :average_level, -> { where(level: 2..4) }
+  scope :hard_level, -> { where(level: 5..Float::INFINITY) }
 
   scope :by_category, -> (category) {
-        joins(:category).where(categories: { title: category }).order(id: :desc).pluck(:title)
+        joins(:category).where(categories: { title: category }).order(id: :desc)
   }
+
+  def self.display_title(category)
+    by_category(category).pluck(:title)
+  end
   #def self.by_category(category)
   #  joins(:category).where(categories: { title: category }).order(id: :desc).pluck(:title)
   #end
