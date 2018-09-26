@@ -1,11 +1,13 @@
 class Answer < ApplicationRecord
   belongs_to :question
-  scope :correct_answers, -> { where(correct: true) }
-  validate :max_min_answers
+
+  scope :correct_responds, -> { where(correct: true) }
+
+  validate :max_responds
 
   private
 
-  def max_min_answers
-    errors.add(:question, message: "Must be between 1 and 4 answers") if question.answers.count >= 4
+  def max_responds
+    errors.add(:question, message: "Must be no more than 4 answers") if question.answers.count > 4
   end
 end
