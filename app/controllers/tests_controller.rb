@@ -20,8 +20,6 @@ class TestsController < ApplicationController
   def start
     #render plain: 'Start certain test'
     #create test user
-    #byebug
-
   end
 
   def show
@@ -31,7 +29,6 @@ class TestsController < ApplicationController
   def new
     # controller_name
     # action_name
-
   end
 
   def create

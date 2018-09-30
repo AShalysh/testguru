@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test
+  before_action :find_test, except: [:show, :destroy]
+  before_action :find_question, only: [:show, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -8,12 +9,13 @@ class QuestionsController < ApplicationController
   def index
     @questions = @test.questions
     # @questions = Question.where(test: @test)
-    render 'index'
+    #render 'index'
   end
 
   #http://localhost:3000/tests/1/questions/1
+  # http://localhost:3000/questions/11
   def show 
-    @question = Question.find(params[:id])
+    
   end  
 
   def new
@@ -21,13 +23,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create!(question_params)
+    question = Question.new(question_params)
+    question.test = @test
+    question.save!
     render plain: question.inspect
   end
 
   def destroy
-    ##
-    @question = Question.find(params[:id])
     @question.destroy!
     redirect_to root_path
   end  
@@ -35,11 +37,15 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def find_test
     @test = Test.find(params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def rescue_with_question_not_found

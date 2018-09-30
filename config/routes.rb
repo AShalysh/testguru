@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   #get '/tests/:category/:title', to: 'tests#search', level: 2
 
-  resources :tests do
+  resources :tests, shallow: true do
     resources :questions
   end
 
