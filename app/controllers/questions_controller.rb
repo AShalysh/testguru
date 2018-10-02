@@ -1,18 +1,16 @@
 class QuestionsController < ApplicationController
 
-  before_action :find_test, except: [:show, :destroy]
+  before_action :find_test, only: [:index, :new, :create]
   before_action :find_question, only: [:show, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
-#http://localhost:3000/tests/1/questions
   def index
     @questions = @test.questions
     # @questions = Question.where(test: @test)
     #render 'index'
   end
 
-  #http://localhost:3000/tests/1/questions/1
   # http://localhost:3000/questions/11
   def show 
     
@@ -23,8 +21,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.new(question_params)
-    question.test = @test
+    # question = Question.new(question_params)
+    # question.test = @test
+    question = @test.questions.build(question_params)
     question.save!
     render plain: question.inspect
   end
