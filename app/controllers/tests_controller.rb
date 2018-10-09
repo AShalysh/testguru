@@ -1,4 +1,7 @@
 class TestsController < ApplicationController
+  
+  before_action :find_test, only: [:show, :edit, :update, :destroy]
+  
   def index
     #result = ["Class: #{params.class}, parameters: #{params.inspect}"]
     #render plain: result.join("\n")
@@ -14,7 +17,7 @@ class TestsController < ApplicationController
     #  format.json {render json: { tests: Test.all }}
     # end
     @tests = Test.all
-    render inline: '<p> Blabla: <%= @tests.inspect %>! </p>'
+    # render inline: '<p> Blabla: <%= @tests.inspect %>! </p>'
   end
 
   def start
@@ -23,19 +26,39 @@ class TestsController < ApplicationController
   end
 
   def show
-    redirect_to root_path
+    #redirect_to root_path
   end
 
   def new
-    # controller_name
-    # action_name
+    @test = Test.new
   end
 
   def create
+    @test = Test.new(test_params)
+
+    if @test.save
+      redirect_to @test
+    else
+      render :new
+    end
+
     # result = ["Class: #{params.class}, parameters: #{params.inspect}"]
     # render plain: result.join("\n")
-    test = Test.create!(test_params)
-    render plain: test.inspect
+    #lesson #7
+    # test = Test.create!(test_params)
+    # render plain: test.inspect
+  end
+
+  def edit
+    
+  end
+
+  def update
+    if @test.update(test_params)
+      redirect_to @test
+    else
+      render :edit
+    end
   end
 
   def search
@@ -43,9 +66,18 @@ class TestsController < ApplicationController
     render plain: result.join("\n")
   end
 
+  def destroy
+    @test.destroy
+    redirect_to tests_path
+  end
+
   private 
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :user_id)
+  end
+
+  def find_test
+    @test = Test.find(params[:id])
   end
 end
