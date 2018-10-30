@@ -1,6 +1,7 @@
 class TestsController < ApplicationController
   
-  before_action :find_test, only: [:show, :edit, :update, :destroy]
+  before_action :find_test, only: %i[show edit update destroy start]
+  before_action :find_user, only: :start
   
   def index
     #result = ["Class: #{params.class}, parameters: #{params.inspect}"]
@@ -18,11 +19,6 @@ class TestsController < ApplicationController
     # end
     @tests = Test.all
     # render inline: '<p> Blabla: <%= @tests.inspect %>! </p>'
-  end
-
-  def start
-    #render plain: 'Start certain test'
-    #create test user
   end
 
   def show
@@ -71,6 +67,11 @@ class TestsController < ApplicationController
     redirect_to tests_path
   end
 
+  def start
+    @user.tests.push(@test) # Create test passage here (through user tests)
+    redirect_to @user.test_passage(@test)
+  end
+
   private 
 
   def test_params
@@ -79,5 +80,9 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_user
+    @user = User.first
   end
 end

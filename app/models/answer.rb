@@ -1,7 +1,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
-
-  scope :correct_responds, -> { where(correct: true) }
+  
+  scope :correct, -> { where(correct: true) }
 
   validate :max_responds
 
