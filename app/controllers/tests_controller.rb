@@ -4,25 +4,14 @@ class TestsController < ApplicationController
   before_action :find_user, only: :start
   
   def index
-    #result = ["Class: #{params.class}, parameters: #{params.inspect}"]
     #render plain: result.join("\n")
     #render html: '<h1>All tests</h1>'.html_safe
-    #render inline: '<p> Blabla: <%= %[ybuR].reverse! %>! </p>'
     #render file: 'public/about', layout: false
-    #head 204
-    #head no_content
-    #byebug
-    #render inline: '<%= console %>'
-    # respond_to do |format|
-    #  format.html { render plain: 'All tests' }
-    #  format.json {render json: { tests: Test.all }}
-    # end
     @tests = Test.all
     # render inline: '<p> Blabla: <%= @tests.inspect %>! </p>'
   end
 
   def show
-    #redirect_to root_path
   end
 
   def new
@@ -38,15 +27,9 @@ class TestsController < ApplicationController
       render :new
     end
 
-    # result = ["Class: #{params.class}, parameters: #{params.inspect}"]
-    # render plain: result.join("\n")
-    #lesson #7
-    # test = Test.create!(test_params)
-    # render plain: test.inspect
   end
 
   def edit
-    
   end
 
   def update

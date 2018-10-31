@@ -1,5 +1,5 @@
 <h1>The <%= @test_passage.test.title %> Test was completed.</h1>
-<% if @test_passage.score >= 85 %>
+<% if @test_passage.success? %>
   <p class='green'> Your score is <%= @test_passage.score %>, you finished the test successfully.</p>
 <% else %>
   <p class='red'> Your score is <%= @test_passage.score %>, you failed the test.</p>

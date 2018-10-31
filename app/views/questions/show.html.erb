@@ -1,6 +1,6 @@
 <h1> Question for test: <%=  @question.test.title %></h1>
 
-<p><%=  @question.body %></p>
+<p><%= @question.body %></p>
 
 <h2> Answers </h2>
 <%= link_to 'New Answer', new_question_answer_path(@question) %>
