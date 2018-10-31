@@ -8,6 +8,6 @@ class Answer < ApplicationRecord
   private
 
   def max_responds
-    #errors.add(:question, message: "Must be no more than 4 answers") if question.answers.count > 4
+    errors.add(:question, message: "Must be no more than 4 answers") if question.answers.count > 4
   end
 end
