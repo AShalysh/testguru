@@ -1,10 +1,6 @@
 class AnswersController < ApplicationController
   before_action :find_question, only: %i[new create]
   before_action :find_answer, only: %i[show edit update destroy]
-  
-  # def index
-  #   @answers = @question.answers.all
-  # end
 
   def show
   end

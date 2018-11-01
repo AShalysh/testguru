@@ -20,19 +20,15 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    if self.score >= 85
-      true
-    else
-      false
-    end
+    self.score >= 85
   end
 
   def question_number
-    test.questions.index(self.current_question) + 1
+    questions.where('id <= ?', current_question.id).count
   end
 
   def total_questions
-    test.questions.count
+    questions.count
   end
 
   private
@@ -42,27 +38,28 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    if answer_ids.nil?
-      false
-    else
-      correct_answers.ids.sort == answer_ids.map(&:to_i).sort
-    end
+    # comparing ids of chosen answers and correct answers. Array is making sure we have array but not nil
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
-  def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+  def questions
+    test.questions
+  end
+
+  def next_question   
+    if self.current_question.nil?
+      questions.first 
+    else
+      questions.order(:id).where('id > ?', current_question.id).first
+    end
   end
 
   def set_next_question
-    if self.current_question.nil?
-      self.current_question = test.questions.first 
-    else
-      self.current_question = next_question
-    end
+    self.current_question = next_question
   end
 
   def number_of_questions
-    test.questions.count
+    questions.count
   end
 
 end
