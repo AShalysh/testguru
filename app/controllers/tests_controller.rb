@@ -1,7 +1,8 @@
 class TestsController < ApplicationController
   
+  before_action :authenticate_user! #checking if user was auth
   before_action :find_test, only: %i[show edit update destroy start]
-  before_action :find_user, only: :start
+  # before_action :find_user, only: :start
   
   def index
     #render plain: result.join("\n")
@@ -51,8 +52,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test) # Create test passage here (through user tests)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test) # Create test passage here (through user tests)
+    redirect_to current_user.test_passage(@test)
   end
 
   private 
@@ -65,7 +66,4 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def find_user
-    @user = User.first
-  end
 end
