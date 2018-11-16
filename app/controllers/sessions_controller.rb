@@ -1,31 +1,31 @@
 class SessionsController < ApplicationController
-
-  skip_before_action :store_page
+  skip_before_action :authenticate_user!
 
   #to show the form for login
   def new
   end
-#creating sessions
+  #creating sessions
   def create
-    user = User.find_by(email: params[:email]) #searching user by email
+    user = User.find_by(email: params[:email])
 
     if user&.authenticate(params[:password]) #if user is nil, it will be also nil. If user is found, we will have object. Whatever is in the hash will be checked with password in password_digest
       session[:user_id] = user.id #the method session is like hash
-      if cookies[:last_page]
-        redirect_to cookies[:last_page]
-      else  
-        redirect_to tests_path
-      end  
+      redirect_to cookies.delete(:last_page) || tests_path 
     else
-      flash_message_verify_login
-      #flash.now[:alert] = 'Are you a GURU. Verify your your email and password please.' #if something went wrong, we give a flash message
+      set_unauth_flash_msg
       render :new
     end
-      
   end
-#logout
+  #logout
   def destroy
-    session[:user_id] = nil
+    session.delete(:user_id)
     redirect_to login_path
   end
+
+  private
+
+  def set_unauth_flash_msg
+    flash.now[:alert] = 'Are you a GURU. Verify your email and password please.'
+  end
+
 end

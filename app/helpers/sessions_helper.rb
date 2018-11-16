@@ -1,6 +1,8 @@
 module SessionsHelper
   #if something went wrong, we give a flash message
-  def flash_message_verify_login
-    flash.now[:alert] = 'Are you a GURU. Verify your your email and password please.'
+  def set_unauthorized_flash_message(msg, options)
+    if msg
+      content_tag :p, flash[:alert], options
+    end
   end
 end
