@@ -1,6 +1,6 @@
 <%= form_with url: sessions_path, local: true do |form| %>
 
-<%= set_unauthorized_flash_message(flash[:alert], class: 'flash alert') %>
+<%= print_flash_message(:alert, class: 'flash alert') %>
 
 <p>
   <%= form.label :email %>

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id #the method session is like hash
       redirect_to cookies.delete(:last_page) || tests_path 
     else
-      set_unauth_flash_msg
+      flash.now[:alert] = 'Are you a GURU. Verify your email and password please.'
       render :new
     end
   end
@@ -20,12 +20,6 @@ class SessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     redirect_to login_path
-  end
-
-  private
-
-  def set_unauth_flash_msg
-    flash.now[:alert] = 'Are you a GURU. Verify your email and password please.'
   end
 
 end
