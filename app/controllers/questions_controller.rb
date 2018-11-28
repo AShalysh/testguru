@@ -13,36 +13,7 @@ class QuestionsController < ApplicationController
   def show   
   end
 
-  # def new
-  #   @question = Question.new
-  # end
-
-  # def edit
-  # end
-
-  # def update
-  #   if @question.update(question_params)
-  #     redirect_to @question
-  #   else
-  #     render :edit
-  #   end
-  # end
-
-  # def create
-  #   question = @test.questions.build(question_params)
-  #   question.save!
-  #   render plain: question.inspect
-  # end
-
-  # def destroy
-  #   @question.destroy!
-  #   redirect_to root_path
-  # end
-
   private
-  # def question_params
-  #   params.require(:question).permit(:body)
-  # end
 
   def find_test
     @test = Test.find(params[:test_id])

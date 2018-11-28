@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
   root 'tests#index'
-  devise_for :users, path: :gurus, path_name: { sign_in: :login, sign_out: :logout }
+  devise_for :users, 
+    path: :gurus, 
+    path_name: { sign_in: :login, sign_out: :logout },
+    controllers: {
+      sessions: 'my_devise/sessions'
+    }
 
   get 'users/new'
 
@@ -15,7 +20,6 @@ Rails.application.routes.draw do
     
   end
 
-# GET /test_passages/101/result
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
   end
