@@ -12,7 +12,11 @@ class TestsController < ApplicationController
     redirect_to current_user.test_passage(@test)
   end
 
-  private 
+  private
+
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id, :user_id)
+  end
 
   def find_test
     @test = Test.find(params[:id])

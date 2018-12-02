@@ -22,7 +22,7 @@ class User < ApplicationRecord
   end
 
   def admin?
-    type == "Admin"
-  end  
+    is_a?(Admin)
+  end
 
 end
