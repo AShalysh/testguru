@@ -3,12 +3,15 @@
 <p><%= @question.body %></p>
 
 <h2> Answers </h2>
-<%= link_to 'New Answer', new_admin_question_answer_path(@question) %>
 
-<ol> 
+<table>
+  <tr>
+    <th> Answer </th>
+    <th> Correct? </th>
+    <th colspan="2"> Actions </th>
+  </tr>
   <%= render @question.answers %>
-</ol>
+</table>
 
-<%= link_to 'Tests', tests_path %>
-<%= link_to 'Edit', edit_admin_question_path(@question)%>
-<%= link_to 'Back', admin_test_path(@question.test)%>
+<%= link_to 'New Answer', new_admin_question_answer_path(@question) %> | 
+<%= link_to 'Back to all tests', admin_test_path(@question.test)%>

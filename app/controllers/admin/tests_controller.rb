@@ -14,7 +14,8 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
-    @test = Test.new(test_params)
+    @test = @test.build(test_params)
+    @test.save!
     @test.author = current_user
 
     if @test.save
@@ -46,7 +47,11 @@ class Admin::TestsController < Admin::BaseController
     redirect_to admin_tests_path
   end
 
-  private 
+  private
+
+  def test_params
+    params.require(:test).permit(:title, :level, :category_id)
+  end
 
   def find_test
     @test = Test.find(params[:id])

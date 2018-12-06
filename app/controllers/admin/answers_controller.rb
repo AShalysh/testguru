@@ -1,6 +1,11 @@
 class Admin::AnswersController < Admin::BaseController
-  before_action :find_question, only: %i[new create]
+  before_action :find_question, only: %i[new create index update edit destroy]
   before_action :find_answer, only: %i[show edit update destroy]
+  #before_action :find_test, only: [:index, :new, :create, :edit, :update]
+
+  def index
+    @answers = @question.answers
+  end  
 
   def show
   end
@@ -13,10 +18,12 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def create
-    @answer = Answer.new(answer_params)
+    #@answer = Answer.new(answer_params)
+    @answer = @question.answers.build(answer_params)
+    @answer.save!
 
     if @answer.save
-      redirect_to @answer
+      redirect_to admin_question_path(@answer.question)
     else
       render :new
     end
@@ -24,18 +31,22 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer   
+      redirect_to admin_question_answers_path(@question)   
     else
       render :edit
     end
   end
 
   def destroy
-    @answer.destroy
-    redirect_to @answer.question
+    @answer.destroy!
+    redirect_to admin_question_answers_path(@question)
   end
 
   private
+
+    def find_test
+      #@test = Test.find(params[:test_id])
+    end
     
     def find_question
       @question = Question.find(params[:question_id]) 
@@ -46,6 +57,6 @@ class Admin::AnswersController < Admin::BaseController
     end
 
     def answer_params
-      params.require(:answer).permit(:body, :correct)
+      params.require(:answer).permit(:body, :correct, :question_id)
     end
 end

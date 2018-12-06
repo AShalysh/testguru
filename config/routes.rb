@@ -25,7 +25,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :tests, :questions, :answers
+    resources :tests do
+      resources :questions
+    end  
+    resources :questions do
+      resources :answers
+    end  
   end
 
 end
