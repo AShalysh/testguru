@@ -1,0 +1,13 @@
+<h1>Answers for question: <%=  @question.body %></h1>
+
+<table>
+  <tr>
+    <th> Answer </th>
+    <th> Correct? </th>
+    <th colspan="2"> Actions </th>
+  </tr>
+  <%= render @answers %>
+</table>
+
+<%= link_to 'Back', admin_test_path(@question.test) %> | 
+<%= link_to 'New Answer', new_admin_question_answer_path(@question) %>

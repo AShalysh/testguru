@@ -10,14 +10,15 @@
   </head>
 
   <body>
-    <p class = "nav user"> <%= link_to "The Name of Project is TestGuru", tests_path %> </p>
-    <% if logged_in? %>
-      <p class = "nav user">Welcome, <b><%= current_user.first_name %></b>!</p>
-      <p class = "nav user"> <%= link_to "Log out", logout_path, method: :delete %> </p>
-    <% else %>
-      <p class = "nav user"> <%= link_to "Log in", login_path %> </p>
-      <p class = "nav user"> New user? <%= link_to "Sign up now", signup_path %> </p>
+
+    <% if user_signed_in? %>
+      <p class = "nav user">
+      Welcome, <b><%= current_user.first_name + ' ' + current_user.last_name %></b> GURU |
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </p>
     <% end %>
+
+    <%= render 'shared/flash' %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>

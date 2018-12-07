@@ -1,0 +1,57 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+                     root GET    /                                                                                        tests#index
+         new_user_session GET    /gurus/sign_in(.:format)                                                                 devise/sessions#new
+             user_session POST   /gurus/sign_in(.:format)                                                                 devise/sessions#create
+     destroy_user_session DELETE /gurus/sign_out(.:format)                                                                devise/sessions#destroy
+        new_user_password GET    /gurus/password/new(.:format)                                                            devise/passwords#new
+       edit_user_password GET    /gurus/password/edit(.:format)                                                           devise/passwords#edit
+            user_password PATCH  /gurus/password(.:format)                                                                devise/passwords#update
+                          PUT    /gurus/password(.:format)                                                                devise/passwords#update
+                          POST   /gurus/password(.:format)                                                                devise/passwords#create
+ cancel_user_registration GET    /gurus/cancel(.:format)                                                                  devise/registrations#cancel
+    new_user_registration GET    /gurus/sign_up(.:format)                                                                 devise/registrations#new
+   edit_user_registration GET    /gurus/edit(.:format)                                                                    devise/registrations#edit
+        user_registration PATCH  /gurus(.:format)                                                                         devise/registrations#update
+                          PUT    /gurus(.:format)                                                                         devise/registrations#update
+                          DELETE /gurus(.:format)                                                                         devise/registrations#destroy
+                          POST   /gurus(.:format)                                                                         devise/registrations#create
+    new_user_confirmation GET    /gurus/confirmation/new(.:format)                                                        devise/confirmations#new
+        user_confirmation GET    /gurus/confirmation(.:format)                                                            devise/confirmations#show
+                          POST   /gurus/confirmation(.:format)                                                            devise/confirmations#create
+             sessions_new GET    /sessions/new(.:format)                                                                  sessions#new
+                users_new GET    /users/new(.:format)                                                                     users#new
+               start_test POST   /tests/:id/start(.:format)                                                               tests#start
+                    tests GET    /tests(.:format)                                                                         tests#index
+      result_test_passage GET    /test_passages/:id/result(.:format)                                                      test_passages#result
+             test_passage GET    /test_passages/:id(.:format)                                                             test_passages#show
+                          PATCH  /test_passages/:id(.:format)                                                             test_passages#update
+                          PUT    /test_passages/:id(.:format)                                                             test_passages#update
+              admin_tests GET    /admin/tests(.:format)                                                                   admin/tests#index
+                          POST   /admin/tests(.:format)                                                                   admin/tests#create
+           new_admin_test GET    /admin/tests/new(.:format)                                                               admin/tests#new
+          edit_admin_test GET    /admin/tests/:id/edit(.:format)                                                          admin/tests#edit
+               admin_test GET    /admin/tests/:id(.:format)                                                               admin/tests#show
+                          PATCH  /admin/tests/:id(.:format)                                                               admin/tests#update
+                          PUT    /admin/tests/:id(.:format)                                                               admin/tests#update
+                          DELETE /admin/tests/:id(.:format)                                                               admin/tests#destroy
+          admin_questions GET    /admin/questions(.:format)                                                               admin/questions#index
+                          POST   /admin/questions(.:format)                                                               admin/questions#create
+       new_admin_question GET    /admin/questions/new(.:format)                                                           admin/questions#new
+      edit_admin_question GET    /admin/questions/:id/edit(.:format)                                                      admin/questions#edit
+           admin_question GET    /admin/questions/:id(.:format)                                                           admin/questions#show
+                          PATCH  /admin/questions/:id(.:format)                                                           admin/questions#update
+                          PUT    /admin/questions/:id(.:format)                                                           admin/questions#update
+                          DELETE /admin/questions/:id(.:format)                                                           admin/questions#destroy
+            admin_answers GET    /admin/answers(.:format)                                                                 admin/answers#index
+                          POST   /admin/answers(.:format)                                                                 admin/answers#create
+         new_admin_answer GET    /admin/answers/new(.:format)                                                             admin/answers#new
+        edit_admin_answer GET    /admin/answers/:id/edit(.:format)                                                        admin/answers#edit
+             admin_answer GET    /admin/answers/:id(.:format)                                                             admin/answers#show
+                          PATCH  /admin/answers/:id(.:format)                                                             admin/answers#update
+                          PUT    /admin/answers/:id(.:format)                                                             admin/answers#update
+                          DELETE /admin/answers/:id(.:format)                                                             admin/answers#destroy
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
