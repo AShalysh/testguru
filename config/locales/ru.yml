@@ -1,0 +1,83 @@
+ru:
+  hello: "Привет, Мир"
+  helpers:
+    select:
+      prompt: "Сделайте выбор:"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Kатегория"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Наши тесты:"
+      title: "Название"
+      level: "Уровень"
+      question_num: "Количество вопросов"
+      actions: "Начать тест"
+    test:
+      start: "старт"
+
+  test_passages:
+    result:
+      header: "Тест %(title) успешно завершен."
+      score-green: "Ваш бал %(score), вы прошли тест удачно."
+      score-red: "Ваш бал %(score), вы не прошли тест."
+
+  tests_mailers:
+    completed_test:
+      subject: "Вы успешно завершили тест на Test Guru!"
+
+  admin:
+    nav:
+      admin_panel: "Панель Администратора TestGuru"
+      welcome: "Привет, "
+      logout: "Выход"
+    tests:
+      index:
+        header: "Список наших тестов:"
+        title: "Название"
+        level: "Уровень"
+        question_num: "Количество вопросов"
+        actions: "Действия"
+        new_test: "Создать Новый Тест"
+      create:
+        success: "Тест успешно создан."
+      update:
+        success_update: "Тест успешно обновлен."
+      destroy:
+        success_destroy: "Тест успешно удален."
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        you_sure: "Bы уверены?"
+      show:
+        test_description: "Описание теста"
+        title: "Название:"
+        level: "Уровень:"
+        questions: "Bопросы:"
+        new_question: "Новый вопрос"
+        edit_test: "Редактировать тест"
+        back: "Назад"
+      edit:
+        back: "Назад"
+    questions:
+      question:
+        show_question: "Показать вопрос и его ответы"
+        edit_question: "Редактировать вопрос"
+        delete_question: "Удалить вопрос"
+        you_sure: "Bы уверены?"

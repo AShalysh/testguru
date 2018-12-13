@@ -24,6 +24,8 @@ class Test < ApplicationRecord
   def self.titles_by_category(category)
     by_category(category).pluck(:title)
   end
+
+
   #def self.by_category(category)
   #  joins(:category).where(categories: { title: category }).order(id: :desc).pluck(:title)
   #end

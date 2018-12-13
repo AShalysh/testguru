@@ -24,13 +24,21 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
-  namespace :admin do
+  # namespace :admin do
+  #   resources :tests do
+  #     resources :questions
+  #   end
+  #   resources :questions do
+  #     resources :answers
+  #   end
+  # end
+  
+  namespace :admin, shallow: true do
     resources :tests do
-      resources :questions
-    end  
-    resources :questions do
-      resources :answers
-    end  
+      resources :questions do
+        resources :answers
+      end
+    end
   end
 
 end

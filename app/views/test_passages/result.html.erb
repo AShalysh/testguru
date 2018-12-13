@@ -1,7 +1,9 @@
-<h1>The <%= @test_passage.test.title %> Test was completed.</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 <% if @test_passage.success? %>
   <p class='green'> Your score is <%= @test_passage.score %>, you finished the test successfully.</p>
+  <p><%= t('.score-green', score: @test_passage.score) %></p>
 <% else %>
   <p class='red'> Your score is <%= @test_passage.score %>, you failed the test.</p>
+  <p><%= t('.score-red', score: @test_passage.score) %></p>
 <% end %>
 <%= link_to 'The list of all tests.', tests_path %>

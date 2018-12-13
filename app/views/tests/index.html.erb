@@ -1,13 +1,11 @@
-<p>Our tests:</p>
- <table>
-  <tr>
-    <th> Title </th>
-    <th> Level </th>
-    <th> Question # </th>
-    <th> Actions </th>
-  </tr>
-
-  <%= render @tests %>
-
- </table>
+<p><%= t('.header') %></p>
+  <table>
+    <tr>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.question_num') %></th>
+      <th><%= t('.actions') %></th>
+    </tr>
+    <%= render @tests %>
+  </table>
  
