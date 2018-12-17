@@ -20,6 +20,9 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    delete: "Удалить"
+    delete_confirmation:
+      you_sure: "Вы уверены?"
 
   tests:
     index:
@@ -77,7 +80,7 @@ ru:
         back: "Назад"
     questions:
       question:
-        show_question: "Показать вопрос и его ответы"
-        edit_question: "Редактировать вопрос"
+        show: "Показать вопрос и его ответы"
+        edit: "Редактировать вопрос"
         delete_question: "Удалить вопрос"
         you_sure: "Bы уверены?"

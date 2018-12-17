@@ -1,8 +1,10 @@
 <tr>
   <td><%= question.body %></td>
-  <td><%= link_to t('.show_question'), admin_question_path(question) %></td>
-  <td><%= link_to t('.edit_question'), edit_admin_question_path(question) %> </td>
-  <td><%= link_to t('.delete_question'), admin_question_path(question),
-    method: :delete,
-    data: { confirm: t('.you_sure') } %> </td>
+  <td><%= link_to t('.show'), admin_question_path(question) %></td>
+  <td><%= link_to t('.edit'), edit_admin_question_path(question) %> </td>
+  <%= render partial: 'shared/delete_confirmation',
+    locals: {
+      delete_path: admin_question_path(question)
+    }
+  %>
 </tr>

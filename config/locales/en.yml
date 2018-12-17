@@ -50,6 +50,10 @@ en:
       header:
         one: "%{count} error detected."
         other: "%{count} errors detected."
+    delete: "Delete"
+    delete_confirmation:
+      you_sure: "Are you sure?"
+    
 
   tests:
     index:
@@ -107,7 +111,7 @@ en:
         back: "Back"
     questions:
       question:
-        show_question: "Show question and the answers"
-        edit_question: "Edit question"
+        show: "Show question and the answers"
+        edit: "Edit question"
         delete_question: "Delete question"
         you_sure: "Are you sure?"

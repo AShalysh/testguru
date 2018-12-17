@@ -18,7 +18,8 @@ class Admin::TestsController < Admin::BaseController
     @test.author = current_user
 
     if @test.save
-      redirect_to [:admin, @test], notice: t('.success')
+      # redirect_to [:admin, @test], notice: t('.success')
+      redirect_to admin_test_path(@test), notice: t('.success')
     else
       render :new
     end
@@ -30,8 +31,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      # redirect_to admin_test_path(@test)
-      redirect_to [:admin, @test], notice: t('.success_update')
+      redirect_to admin_test_path(@test), notice: t('.success_update')
     else
       render :edit
     end
@@ -44,7 +44,8 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    redirect_to [:admin, @test], notice: t('.success_destroy')
+    # redirect_to [:admin, @test], notice: t('.success_destroy')
+    redirect_to admin_test_path(@test), notice: t('.success_destroy')
   end
 
   private
