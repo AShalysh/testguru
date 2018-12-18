@@ -3,16 +3,12 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
-  # to keep locale the same when you go from page to page (options={})
-  # def default_url_options
-  #   { lang: I18n.locale }
-  # end
 
   def default_url_options
     if I18n.locale != I18n.default_locale
-      { :lang => I18n.locale}
+      { lang: I18n.locale}
     else
-      { :locale => nil }
+      {}
     end
   end
 
