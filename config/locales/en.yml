@@ -31,3 +31,87 @@
 
 en:
   hello: "Hello world"
+# for buttons, select and labels
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected."
+        other: "%{count} errors detected."
+    delete: "Delete"
+    delete_confirmation:
+      you_sure: "Are you sure?"
+    
+
+  tests:
+    index:
+      header: "Our tests:"
+      title: "Title"
+      level: "Level"
+      question_num: "Questions #"
+      actions: "Start the test"
+    test:
+      start: "start"
+
+  test_passages:
+    result:
+      header: "Test %(title) successfully completed."
+      score-green: "Your score is %(score), you finished the test successfully."
+      score-red: "Your score is %(score), you failed the test."
+
+  tests_mailers:
+    completed_test:
+      subject: "You have just completed the Test Guru test!"
+
+  admin:
+    nav:
+      admin_panel: "TestGuru Admin Panel"
+      welcome: "Welcome, "
+      logout: "Log out"
+    tests:
+      index:
+        header: "The list of our tests:"
+        title: "Title"
+        level: "Level"
+        question_num: "Questions #"
+        actions: "Actions"
+        new_test: "Create a New Test"
+      create:
+        success: "The test was successfully created."
+      update:
+        success_update: "The test was successfully updated."
+      destroy:
+        success_destroy: "The test was successfully deleted."
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        you_sure: "Are you sure?"
+      show:
+        test_description: "Test description"
+        title: "Title:"
+        level: "Level:"
+        questions: "Questions:"
+        new_question: "New Question"
+        edit_test: "Edit test"
+        back: "Back"
+      edit:
+        back: "Back"
+    questions:
+      question:
+        show: "Show question and the answers"
+        edit: "Edit question"
+        delete_question: "Delete question"
+        you_sure: "Are you sure?"
