@@ -20,9 +20,10 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-    delete: "Удалить"
     delete_confirmation:
-      you_sure: "Вы уверены?"
+      delete: "Удалить"
+      
+  you_sure: "Вы уверены?"
 
   tests:
     index:

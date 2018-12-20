@@ -45,14 +45,17 @@ en:
         level: "Level"
         category_id: "Category"
 
+  whateryou_want:
+    you_sure: 'sdkfgksdfg'
   shared:
     errors:
       header:
         one: "%{count} error detected."
-        other: "%{count} errors detected."
-    delete: "Delete"
+        other: "%{count} errors detected."    
     delete_confirmation:
-      you_sure: "Are you sure?"
+      delete: "Delete"
+      
+  you_sure: "Are you sure?"
     
 
   tests:
