@@ -43,6 +43,11 @@ gem 'rails-i18n', '~> 5.1.2'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 
+gem 'bootstrap-sass', '~> 3.3.7'
+
+# gem 'bootstrap-sass', '~> 3.4.0'
+# gem 'sassc-rails', '>= 2.0.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

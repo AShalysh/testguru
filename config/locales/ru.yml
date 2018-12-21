@@ -47,7 +47,7 @@ ru:
 
   admin:
     nav:
-      admin_panel: "Панель Администратора TestGuru"
+      admin_panel: "Панель Администратора"
       welcome: "Привет, "
       logout: "Выход"
     tests:

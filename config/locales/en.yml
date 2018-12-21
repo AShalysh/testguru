@@ -45,8 +45,6 @@ en:
         level: "Level"
         category_id: "Category"
 
-  whateryou_want:
-    you_sure: 'sdkfgksdfg'
   shared:
     errors:
       header:
@@ -80,7 +78,7 @@ en:
 
   admin:
     nav:
-      admin_panel: "TestGuru Admin Panel"
+      admin_panel: "Admin Panel"
       welcome: "Welcome, "
       logout: "Log out"
     tests:

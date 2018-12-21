@@ -1,8 +1,8 @@
-<h1>Editing Answer</h1>
-
-<p>
-  <%= @answer.question.body %>
-</p>
-
-<%= render 'form' %>
-<%#= link_to 'Back', admin_test_path(@test) %>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h4 class="text-md-center">Editing Answer</h4>
+    <p class="text-md-center"><%= @answer.question.body %></p>
+    <%= render 'form' %>
+    <%= link_to 'Back', admin_question_path(@answer.question) %>
+  </div>
+</div>
