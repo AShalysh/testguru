@@ -3,7 +3,7 @@
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
   <span class="navbar-test">
     <% if user_signed_in? %>
-      <%= t('.welcome') + ' ' + current_user.first_name + ' ' + current_user.last_name %></b> GURU |
+      <%= t('.welcome', full_name: current_user.full_name) %></b> GURU |
       <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn btn-info' %>
     <% else %>
       <%= link_to "Log in", new_session_path(resource_name) %>

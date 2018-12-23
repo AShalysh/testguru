@@ -52,10 +52,11 @@ en:
         other: "%{count} errors detected."    
     delete_confirmation:
       delete: "Delete"
-      
+    nav:
+      welcome: "Welcome, %{full_name}"
+
   you_sure: "Are you sure?"
     
-
   tests:
     index:
       header: "Our tests:"
@@ -68,9 +69,12 @@ en:
 
   test_passages:
     result:
-      header: "Test %(title) successfully completed."
-      score-green: "Your score is %(score), you finished the test successfully."
-      score-red: "Your score is %(score), you failed the test."
+      header: "Test %{title} successfully completed."
+      score-green: "Your score is %{score}, you finished the test successfully."
+      score-red: "Your score is %{score}, you failed the test."
+    show:
+      passing_title: "Passing the %{title} Test."
+      current_question: "Current question number is %{current_number} out of %{out_of}."
 
   tests_mailers:
     completed_test:
@@ -79,7 +83,7 @@ en:
   admin:
     nav:
       admin_panel: "Admin Panel"
-      welcome: "Welcome, "
+      welcome: "Welcome, %{full_name}"
       logout: "Log out"
     tests:
       index:
