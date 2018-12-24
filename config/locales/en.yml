@@ -49,12 +49,14 @@ en:
     errors:
       header:
         one: "%{count} error detected."
-        other: "%{count} errors detected."
-    delete: "Delete"
+        other: "%{count} errors detected."    
     delete_confirmation:
-      you_sure: "Are you sure?"
-    
+      delete: "Delete"
+    nav:
+      welcome: "Welcome, %{full_name}"
 
+  you_sure: "Are you sure?"
+    
   tests:
     index:
       header: "Our tests:"
@@ -67,9 +69,12 @@ en:
 
   test_passages:
     result:
-      header: "Test %(title) successfully completed."
-      score-green: "Your score is %(score), you finished the test successfully."
-      score-red: "Your score is %(score), you failed the test."
+      header: "Test %{title} successfully completed."
+      score-green: "Your score is %{score}, you finished the test successfully."
+      score-red: "Your score is %{score}, you failed the test."
+    show:
+      passing_title: "Passing the %{title} Test."
+      current_question: "Current question number is %{current_number} out of %{out_of}."
 
   tests_mailers:
     completed_test:
@@ -77,8 +82,8 @@ en:
 
   admin:
     nav:
-      admin_panel: "TestGuru Admin Panel"
-      welcome: "Welcome, "
+      admin_panel: "Admin Panel"
+      welcome: "Welcome, %{full_name}"
       logout: "Log out"
     tests:
       index:

@@ -1,16 +1,20 @@
-<h1>Passing the <%= @test_passage.test.title %>Test</h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-4">
+    <h4> <%= t('.passing_title', title: @test_passage.test.title) %> </h4>
 
-<b>
-  <%= @test_passage.current_question.body %>
-  <p> Current question number is <%= @test_passage.question_number %> out of <%= @test_passage.total_questions %> </p>
-</b>
+    <b>
+      <%= @test_passage.current_question.body %>
+      <p> <%= t('.current_question', current_number: @test_passage.question_number, out_of: @test_passage.total_questions) %> </p>
+    </b>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}"%>
-      <%= b.label %>
-    </p>
-  <% end %>
-  <p> <%= form.submit 'Next' %> </p>
-<% end %>
+    <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+      <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+        <p>
+          <%= b.check_box id: "answer_ids_#{b.object.id}"%>
+          <%= b.label %>
+        </p>
+      <% end %>
+      <p> <%= form.submit 'Next' %> </p>
+    <% end %>
+  </div>
+</div>

@@ -1,17 +1,19 @@
-<h1> <%= t('.test_description') %> </h1>
-<p> <strong> <%= t('.title') %> </strong> 
-  <%= @test.title %>
-</p>
-<p> <strong> <%= t('.level') %> </strong> 
-  <%= @test.level %>
-</p>
+<div class="container mt-5">
+  <h3 class="text-md-center"> <%= t('.test_description') %> </h3>
+  <p> <strong> <%= t('.title') %> </strong> 
+    <%= @test.title %>
+  </p>
+  <p> <strong> <%= t('.level') %> </strong> 
+    <%= @test.level %>
+  </p>
 
-<p> <strong> <%= t('.questions') %> </strong></p>
+  <p> <strong> <%= t('.questions') %> </strong></p>
 
-<table>
-  <%= render partial: 'admin/questions/question', collection: @test.questions %>
-</table>
-<br>
-<%= link_to t('.new_question'), new_admin_test_question_path(@test) %> |
-<%= link_to t('.edit_test'), edit_admin_test_path(@test) %> |
-<%= link_to t('.back'), admin_tests_path %>
+  <table class="table table-bordered mt-3">
+    <%= render partial: 'admin/questions/question', collection: @test.questions %>
+  </table>
+  <br>
+  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %> |
+  <%= link_to t('.edit_test'), edit_admin_test_path(@test) %> |
+  <%= link_to t('.back'), admin_tests_path %>
+</div>

@@ -1,4 +1,14 @@
-#footer {
-  border: 1px solid grey;
-  margin-top: 50px;
+.footer {
+  position: fixed;
+  margin-top: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: lightgrey;
+  color: black;
+}
+
+.alert{
+  border: 1px solid black;
+  background-color: lightgreen;
 }

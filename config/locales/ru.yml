@@ -20,9 +20,12 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружено %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-    delete: "Удалить"
     delete_confirmation:
-      you_sure: "Вы уверены?"
+      delete: "Удалить"
+    nav:
+      welcome: "Привет, %{full_name}"
+      
+  you_sure: "Вы уверены?"
 
   tests:
     index:
@@ -39,6 +42,9 @@ ru:
       header: "Тест %(title) успешно завершен."
       score-green: "Ваш бал %(score), вы прошли тест удачно."
       score-red: "Ваш бал %(score), вы не прошли тест."
+    show:
+      passing_title: "Проходим %{title} Тест"
+      current_question: "Текущий номер вопроса: %{current_number} из %{out_of}."
 
   tests_mailers:
     completed_test:
@@ -46,8 +52,8 @@ ru:
 
   admin:
     nav:
-      admin_panel: "Панель Администратора TestGuru"
-      welcome: "Привет, "
+      admin_panel: "Панель Администратора"
+      welcome: "Привет, %{full_name}"
       logout: "Выход"
     tests:
       index:

@@ -2,8 +2,8 @@
   <td> <%= answer.body %></td>
   <td> <%= answer.correct %></td>
   <%#= link_to 'Show', admin_answers_path(answer) %>
-  <td> <%= link_to 'Edit', edit_admin_answer_path(answer) %>
-  <%= link_to 'Delete',
+  <td> <%= link_to 'Edit', edit_admin_answer_path(answer) %></td>
+  <td><%= link_to 'Delete',
               admin_answer_path(answer),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
