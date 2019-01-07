@@ -3,7 +3,7 @@
     <h4> <%= t('.passing_title', title: @test_passage.test.title) %> </h4>
 
     <b>
-      <%= @test_passage.current_question.body %>
+      <p> <%= @test_passage.current_question.body %> </p>
       <p> <%= t('.current_question', current_number: @test_passage.question_number, out_of: @test_passage.total_questions) %> </p>
     </b>
 
@@ -14,6 +14,7 @@
           <%= b.label %>
         </p>
       <% end %>
+      <p> <%= link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post %> </p>
       <p> <%= form.submit 'Next' %> </p>
     <% end %>
   </div>

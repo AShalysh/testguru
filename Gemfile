@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 #gem 'bcrypt', '~> 3.1.7'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -44,6 +46,12 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 
 gem 'bootstrap-sass', '~> 3.3.7'
+
+#Networking
+
+gem 'faraday'
+
+gem "octokit", "~> 4.0", require: true
 
 # gem 'bootstrap-sass', '~> 3.4.0'
 # gem 'sassc-rails', '>= 2.0.0'

@@ -1,4 +1,8 @@
 ru:
+  services:
+    gist_question_service:
+      description: "Вопрос теста %{title} от TestGuru"
+
   hello: "Привет, Мир"
   helpers:
     select:
@@ -45,12 +49,22 @@ ru:
     show:
       passing_title: "Проходим %{title} Тест"
       current_question: "Текущий номер вопроса: %{current_number} из %{out_of}."
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   tests_mailers:
     completed_test:
       subject: "Вы успешно завершили тест на Test Guru!"
 
   admin:
+    gists:
+      index:
+        gists_header: "Гисты"
+        question: "Вопрос"
+        url: "Гист URL"
+        email: "Почта пользователя"
+        back_to_main: "Назад на главную страницу"
     nav:
       admin_panel: "Панель Администратора"
       welcome: "Привет, %{full_name}"
@@ -63,6 +77,7 @@ ru:
         question_num: "Количество вопросов"
         actions: "Действия"
         new_test: "Создать Новый Тест"
+        gists: "Просмотреть все созданные Гисты"
       create:
         success: "Тест успешно создан."
       update:
