@@ -10,11 +10,6 @@ class GitHubClient
   #creating post request with params
   def create_gist(params)
     @http_client.create_gist(params)
-    # @http_client.post('gists') do |request|
-    #   request.headers['Authorization'] = "token #{ACCESS_TOKEN}"
-    #   request.headers['Content-Type'] = 'application/json'
-    #   request.body = params.to_json
-    # end
   end
 
   def list_gists
@@ -25,7 +20,6 @@ class GitHubClient
 
   def set_http_client
     Octokit::Client.new(:access_token => ACCESS_TOKEN)
-    # Faraday.new(url: ROOT_ENDPOINT)
   end
 
 end

@@ -22,11 +22,11 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@test_passage.current_question).call
-    Gist.create!(url: result.html_url, user: current_user, question: @test_passage.current_question)
+    result = GistQuestionService.new(@test_passage.current_question).call 
+    Gist.create!(url: result.html_url, user: current_user, question: @test_passage.current_question) if result.present?
 
-    flash_options = if result.url.present?
-      { notice: view_context.link_to(t('.success'), result.html_url)  }
+    flash_options = if result.html_url.present?
+      { notice: view_context.link_to(t('.success'), result.html_url).html_safe }
     else
       { alert: t('.failure') }
     end
