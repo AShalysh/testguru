@@ -1,0 +1,7 @@
+<% @gists.each do |gist| %>
+  <tr>
+    <td><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
+    <td><%= link_to gist.url.split('/')[-1], gist.url %></td>
+    <td><%= current_user.email %></td>
+  </tr>
+<% end %>

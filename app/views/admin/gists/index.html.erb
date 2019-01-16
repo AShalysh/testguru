@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h4 class="text-md-center"><%= t('.gists_header') %></h4>
+    <table class="table table-bordered mt-3">
+      <tr>
+        <th><%= t('.question') %></th>
+        <th><%= t('.url') %></th>
+        <th><%= t('.email') %></th>
+      </tr>
+      <%= render "gist" %>
+    </table>
+  <p><%= link_to t('.back_to_main'), admin_tests_path %></p>
+</div>
