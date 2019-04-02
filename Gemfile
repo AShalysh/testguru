@@ -46,6 +46,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0.0.beta'
 
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'octicons_helper'
 
 #Networking
 
