@@ -87,6 +87,7 @@ ru:
       test:
         show: "Показать"
         edit: "Редактировать"
+        full_edit: "Полное редактирование"
         delete: "Удалить"
         you_sure: "Bы уверены?"
       show:
@@ -99,6 +100,9 @@ ru:
         back: "Назад"
       edit:
         back: "Назад"
+      form_inline:
+        submit: "OK"
+        success_update: "Тест успешно переименован"
     questions:
       question:
         show: "Показать вопрос и его ответы"

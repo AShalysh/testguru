@@ -117,6 +117,7 @@ en:
       test:
         show: "Show"
         edit: "Edit"
+        full_edit: "Full Test Edit"
         delete: "Delete"
         you_sure: "Are you sure?"
       show:
@@ -129,6 +130,9 @@ en:
         back: "Back"
       edit:
         back: "Back"
+      form_inline:
+        submit: "OK"
+        success_update: "The test was successfully renamed."
     questions:
       question:
         show: "Show question and the answers"

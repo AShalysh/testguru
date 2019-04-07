@@ -3,8 +3,8 @@
 <%= render 'shared/errors', resource: @test %>
 
   <p>
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :test_title %>
+    <%= form.label :title, class: 'test-title', data: { test_id: @test.id }%>
+    <%= form.text_field :title, id: :test_title, data: { test_id: @test.id } %>
   </p>
    
   <p>
